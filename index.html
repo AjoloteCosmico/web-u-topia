@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>U-topia Development | Automatización Inteligente</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    .hero-bg {
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    .glow-cyan {
+      text-shadow: 0 0 30px rgb(0 245 255);
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-cyan-500/20">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="https://via.placeholder.com/180x60/00F5FF/0A0A0A?text=U-topia+Development" alt="U-topia Development" class="h-9">
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#servicios" class="hover:text-cyan-400 transition">Servicios</a>
+        <a href="#nosotros" class="hover:text-cyan-400 transition">Nosotros</a>
+        <a href="#proyectos" class="hover:text-cyan-400 transition">Proyectos</a>
+        <a href="#contacto" class="hover:text-cyan-400 transition">Contacto</a>
+      </div>
+      <a href="#contacto" class="bg-cyan-500 hover:bg-cyan-400 text-black font-semibold px-6 py-2.5 rounded-full transition text-sm">
+        Iniciar Proyecto
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-bg min-h-screen flex items-center pt-20">
+    <div class="max-w-7xl mx-auto px-6 py-24 text-center">
+      <img src="https://via.placeholder.com/600x180/00F5FF/0A0A0A?text=U-topia+Development" alt="Logo U-topia" class="mx-auto mb-8 h-20">
+      <h1 class="text-6xl md:text-7xl font-bold leading-tight mb-6 glow-cyan">
+        Transformamos tu empresa<br>en una <span class="text-cyan-400">U-topía digital</span>
+      </h1>
+      <p class="max-w-2xl mx-auto text-xl text-gray-300 mb-10">
+        Agencia especializada en desarrollo de software, integraciones tecnológicas y <strong>automatización inteligente de procesos y reportes</strong>.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contacto" class="bg-cyan-500 hover:bg-cyan-400 text-black font-semibold px-10 py-4 rounded-2xl text-lg transition flex items-center justify-center gap-3">
+          <i class="fas fa-rocket"></i> Comenzar ahora
+        </a>
+        <a href="#servicios" class="border border-cyan-400 hover:bg-cyan-400/10 font-semibold px-10 py-4 rounded-2xl text-lg transition">
+          Ver nuestros servicios
+        </a>
+      </div>
+      <div class="mt-16 flex justify-center gap-12 text-sm text-gray-400">
+        <div>✓ +120 proyectos automatizados</div>
+        <div>✓ 98% de clientes satisfechos</div>
+        <div>✓ Soporte 24/7</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="py-24 bg-zinc-950">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-cyan-400 font-medium">ESPECIALIDADES</span>
+        <h2 class="text-5xl font-bold mt-3">Automatización que realmente funciona</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-zinc-900 border border-cyan-500/10 hover:border-cyan-400 rounded-3xl p-10 transition group">
+          <i class="fas fa-robot text-5xl text-cyan-400 mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-4">Automatización de Procesos</h3>
+          <p class="text-gray-400">
+            Eliminamos tareas repetitivas con RPA, flujos inteligentes y bots que trabajan 24/7. 
+            Ahorra hasta 70% del tiempo operativo.
+          </p>
+          <ul class="mt-8 space-y-3 text-sm">
+            <li class="flex items-start gap-3"><i class="fas fa-check text-cyan-400 mt-1"></i> Integración con ERP y CRM</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-cyan-400 mt-1"></i> Flujos de aprobación automáticos</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-cyan-400 mt-1"></i> Notificaciones inteligentes</li>
+          </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-zinc-900 border border-cyan-500/10 hover:border-cyan-400 rounded-3xl p-10 transition group">
+          <i class="fas fa-chart-pie text-5xl text-cyan-400 mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-4">Reportes Automáticos e Inteligentes</h3>
+          <p class="text-gray-400">
+            Dashboards en tiempo real, reportes PDF automáticos y análisis predictivo con IA. 
+            Toma decisiones basadas en datos, no en intuición.
+          </p>
+          <ul class="mt-8 space-y-3 text-sm">
+            <li class="flex items-start gap-3"><i class="fas fa-check text-cyan-400 mt-1"></i> Power BI y Tableau</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-cyan-400 mt-1"></i> Reportes programados por email</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-cyan-400 mt-1"></i> Alertas automáticas de anomalías</li>
+          </ul>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-zinc-900 border border-cyan-500/10 hover:border-cyan-400 rounded-3xl p-10 transition group">
+          <i class="fas fa-plug text-5xl text-cyan-400 mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-4">Integraciones Tecnológicas</h3>
+          <p class="text-gray-400">
+            Conectamos todos tus sistemas (WhatsApp, SAP, Shopify, Google Workspace, APIs bancarias, etc.) para que hablen entre sí sin intervención humana.
+          </p>
+          <ul class="mt-8 space-y-3 text-sm">
+            <li class="flex items-start gap-3"><i class="fas fa-check text-cyan-400 mt-1"></i> API Rest & GraphQL</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-cyan-400 mt-1"></i> Zapier + Make + n8n</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-cyan-400 mt-1"></i> Integraciones personalizadas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios -->
+  <section class="py-24 bg-black">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-5xl font-bold mb-6">¿Por qué elegir U-topia?</h2>
+      <div class="grid md:grid-cols-4 gap-8 mt-16">
+        <div>
+          <div class="text-6xl font-bold text-cyan-400">70%</div>
+          <p class="mt-3 font-medium">Reducción de tiempo en procesos manuales</p>
+        </div>
+        <div>
+          <div class="text-6xl font-bold text-cyan-400">95%</div>
+          <p class="mt-3 font-medium">Precisión en reportes automáticos</p>
+        </div>
+        <div>
+          <div class="text-6xl font-bold text-cyan-400">24/7</div>
+          <p class="mt-3 font-medium">Soporte y monitoreo continuo</p>
+        </div>
+        <div>
+          <div class="text-6xl font-bold text-cyan-400">+50</div>
+          <p class="mt-3 font-medium">Herramientas y plataformas integradas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section id="contacto" class="py-28 bg-gradient-to-br from-cyan-900/20 to-black">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-5xl font-bold mb-6">¿Listo para automatizar tu empresa?</h2>
+      <p class="text-xl text-gray-300 mb-10">Agenda una llamada gratuita de 30 minutos y descubre cómo podemos llevar tu operación al siguiente nivel.</p>
+      
+      <form class="max-w-md mx-auto space-y-6">
+        <input type="text" placeholder="Nombre de tu empresa" class="w-full bg-zinc-900 border border-cyan-500/30 rounded-2xl px-6 py-4 focus:outline-none focus:border-cyan-400">
+        <input type="email" placeholder="Correo electrónico" class="w-full bg-zinc-900 border border-cyan-500/30 rounded-2xl px-6 py-4 focus:outline-none focus:border-cyan-400">
+        <textarea placeholder="Cuéntanos brevemente qué quieres automatizar..." rows="4" class="w-full bg-zinc-900 border border-cyan-500/30 rounded-2xl px-6 py-4 focus:outline-none focus:border-cyan-400"></textarea>
+        <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-400 text-black font-semibold py-5 rounded-2xl text-lg transition">
+          Enviar mensaje y agendar llamada
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-zinc-950 py-12 border-t border-cyan-500/10">
+    <div class="max-w-7xl mx-auto px-6 text-center text-gray-500 text-sm">
+      <img src="https://via.placeholder.com/180x60/00F5FF/0A0A0A?text=U-topia+Development" alt="Logo" class="mx-auto h-8 opacity-75 mb-6">
+      <p>© 2026 U-topia Development • Agencia de Desarrollo de Software e Integraciones Inteligentes</p>
+      <p class="mt-2">México • Transformando procesos manuales en experiencias utópicas</p>
+    </div>
+  </footer>
+
+</body>
+</html>
