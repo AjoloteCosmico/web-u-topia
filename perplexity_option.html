@@ -3,521 +3,611 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luna Castro, Herrera & Asociados | Defensa de sus intereses</title>
-  <!-- Google Fonts: Playfair Display (serif para títulos) e Inter (sans-serif) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <!-- Font Awesome (iconos) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <title>Luna Castro, Herrera & Asociados</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    :root {
-      /* Paleta solicitada */
-      --color-azul-profundo: #0A2B4E;
-      --color-gris-piedra: #4A5568;
-      --color-blanco-roto: #F8FAFC;
-      --color-acento-oro: #C5A059;
+    :root{
+      --blue:#0A2B4E;
+      --stone:#4A5568;
+      --ivory:#F8FAFC;
+      --gold:#C5A059;
+      --white:#ffffff;
+      --line:rgba(10,43,78,.12);
+      --shadow:0 18px 40px rgba(10,43,78,.12);
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+      background:var(--ivory);
+      color:#1f2937;
+      overflow-x:hidden;
     }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      color: #1F2937;
-      background-color: var(--color-blanco-roto);
-      line-height: 1.6;
-      overflow-x: hidden;
+    h1,h2,h3,h4{font-family:"Playfair Display",serif;color:var(--blue);line-height:1.15}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1180px,92%);margin:0 auto}
+    .section{padding:88px 0;position:relative}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      color:var(--gold);font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+      font-size:.8rem
     }
-
-    /* Tipografía */
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      color: var(--color-azul-profundo);
+    .eyebrow::before{
+      content:"";width:34px;height:1px;background:var(--gold);display:inline-block
     }
-
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.8rem; }
-    h3 { font-size: 1.4rem; }
-    h4 { font-size: 1.2rem; }
-
-    p {
-      margin-bottom: 0.8rem;
-      color: var(--color-gris-piedra);
+    .section-title{font-size:clamp(1.9rem,3vw,3rem);margin:14px 0 14px}
+    .section-lead{max-width:820px;color:var(--stone);font-size:1.04rem;line-height:1.8}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border:0;border-radius:999px;padding:15px 26px;font-weight:700;cursor:pointer;
+      transition:.3s ease;box-shadow:0 10px 24px rgba(10,43,78,.15)
     }
-
-    a {
-      color: var(--color-acento-oro);
-      text-decoration: none;
-      transition: all 0.3s ease;
+    .btn-primary{background:var(--blue);color:#fff}
+    .btn-primary:hover{transform:translateY(-2px);background:#08233f}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff}
+    .btn-outline:hover{background:rgba(255,255,255,.08)}
+    .btn-gold{background:var(--gold);color:#fff}
+    .btn-gold:hover{transform:translateY(-2px);filter:brightness(.98)}
+    .topbar{
+      position:sticky;top:0;z-index:50;background:rgba(248,250,252,.78);
+      backdrop-filter:blur(14px);border-bottom:1px solid var(--line)
     }
-    a:hover {
-      color: #9b7c3c;
-      text-decoration: underline;
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;gap:20px;
+      padding:16px 0
     }
-
-    section {
-      padding: 4rem 1.5rem;
+    .logo{
+      display:flex;flex-direction:column;line-height:1
     }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
+    .logo strong{
+      font-family:"Playfair Display",serif;font-size:1.4rem;letter-spacing:.04em;color:var(--blue)
     }
-
-    .btn {
-      display: inline-block;
-      background-color: var(--color-azul-profundo);
-      color: white;
-      padding: 0.9rem 2rem;
-      font-weight: 600;
-      border-radius: 6px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    .logo span{font-size:.8rem;color:var(--stone);letter-spacing:.08em;text-transform:uppercase}
+    .nav-links{
+      display:flex;gap:22px;align-items:center;flex-wrap:wrap
     }
-
-    .btn:hover {
-      background-color: #08223f;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    .nav-links a{color:var(--stone);font-weight:600;font-size:.95rem;transition:.25s}
+    .nav-links a:hover{color:var(--blue)}
+    .hero{
+      position:relative;overflow:hidden;
+      padding:92px 0 72px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(197,160,89,.14), transparent 28%),
+        radial-gradient(circle at 80% 10%, rgba(10,43,78,.18), transparent 24%),
+        linear-gradient(135deg, #0A2B4E 0%, #123B66 60%, #0A2B4E 100%);
+      color:#fff
     }
-
-    .btn-secundario {
-      background-color: transparent;
-      border: 1px solid var(--color-azul-profundo);
-      color: var(--color-azul-profundo);
+    .hero::after{
+      content:"";position:absolute;inset:auto -8% -35% auto;width:520px;height:520px;
+      background:radial-gradient(circle, rgba(197,160,89,.18), transparent 62%);
+      filter:blur(10px);pointer-events:none
     }
-
-    .btn-secundario:hover {
-      background-color: var(--color-azul-profundo);
-      color: white;
+    .hero-grid{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:center;position:relative;z-index:1
     }
-
-    /* Animaciones base */
-    .fade-in, .modal, .popup {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+    .hero h1{color:#fff;font-size:clamp(2.6rem,5vw,4.7rem);max-width:12ch}
+    .hero p{color:rgba(255,255,255,.88);font-size:1.05rem;line-height:1.85;max-width:60ch;margin:18px 0 28px}
+    .hero-badges{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .badge{
+      border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);
+      color:#fff;border-radius:999px;padding:10px 14px;font-size:.9rem
     }
-
-    .fade-in.visible, .modal.visible, .popup.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .hero-card{
+      background:rgba(248,250,252,.1);border:1px solid rgba(255,255,255,.14);
+      border-radius:24px;padding:28px;box-shadow:0 30px 60px rgba(0,0,0,.18)
     }
-
-    section .fade-in {
-      transition-delay: 0.1s;
+    .hero-card h3{color:#fff;font-size:1.5rem;margin-bottom:12px}
+    .hero-card p{margin:0;color:rgba(255,255,255,.82)}
+    .hero-stat{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+    .stat{
+      background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;padding:14px;text-align:center
     }
-
-    /* HERO / Inicio */
-    #hero {
-      background: linear-gradient(135deg, rgba(10,43,78,0.9) 0%, rgba(10,43,78,0.7) 70%, transparent), url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Cpath fill="%23e2e8f0" fill-opacity=".1" d="M20 0 L0 20 L20 40 L40 20 L60 40 L80 20 L100 40 L100 60 L80 80 L60 100 L40 80 L20 100 L0 80 L20 60z"%3E%3C/path%3E%3C/svg%3E');
-      background-size: 50px;
-      color: white;
-      padding: 5rem 1.5rem;
-      text-align: center;
+    .stat strong{display:block;font-size:1.35rem;color:#fff}
+    .stat span{font-size:.84rem;color:rgba(255,255,255,.75)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .card{
+      background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);
+      transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
+      overflow:hidden
     }
-
-    #hero h1 {
-      margin-bottom: 1.2rem;
-      font-size: 2.4rem;
-      color: white;
-      font-weight: 700;
+    .card:hover{transform:translateY(-6px);border-color:rgba(197,160,89,.55)}
+    .card-pad{padding:24px}
+    .icon-box{
+      width:58px;height:58px;border-radius:16px;display:grid;place-items:center;
+      background:rgba(197,160,89,.12);color:var(--gold);font-size:1.45rem;margin-bottom:18px
     }
-
-    #hero p {
-      max-width: 680px;
-      margin: 0 auto 1.8rem;
-      font-size: 1.1rem;
-      color: #e2e8f0;
+    .muted{color:var(--stone);line-height:1.8}
+    .tagline{
+      margin-top:10px;color:var(--blue);font-weight:700
     }
-
-    #hero .btn {
-      margin-top: 1rem;
-      padding: 1rem 2.2rem;
+    .services .card{cursor:pointer}
+    .service-title{font-size:1.25rem;margin-bottom:10px}
+    .team-photo{
+      height:220px;background:
+        linear-gradient(135deg, rgba(10,43,78,.92), rgba(197,160,89,.22)),
+        linear-gradient(180deg,#dbeafe,#f8fafc);
+      display:flex;align-items:flex-end;padding:22px
     }
-
-    /* Logo tipográfico */
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      color: white;
+    .team-photo h3,.team-photo p{color:#fff}
+    .team-photo p{margin-top:6px;opacity:.9}
+    .success-list{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .success-item h3{margin-bottom:8px}
+    .success-kicker{
+      color:var(--gold);font-weight:800;text-transform:uppercase;font-size:.78rem;letter-spacing:.08em
     }
-
-    .logo span {
-      font-size: 0.9em;
-      color: #e2e8f0;
-      font-weight: 400;
+    .agenda-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+    .panel{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:24px}
+    .field{display:grid;gap:8px;margin-bottom:14px}
+    .field label{font-size:.92rem;font-weight:700;color:var(--blue)}
+    .field input,.field textarea, .field select{
+      width:100%;padding:14px 15px;border-radius:14px;border:1px solid #d7dde7;background:#fff;
+      font:inherit;outline:none;transition:.25s
     }
-
-    /* Secciones genéricas */
-    #el-despacho,
-    #servicios,
-    #equipo,
-    #casos-exito,
-    #agenda-cita,
-    #contacto {
-      background-color: white;
-      margin-top: 1px;
-      border-top: 1px solid rgba(0,0,0,0.05);
+    .field input:focus,.field textarea:focus,.field select:focus{
+      border-color:rgba(197,160,89,.8);box-shadow:0 0 0 4px rgba(197,160,89,.12)
     }
-
-    section h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      position: relative;
+    .mini-calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+    .day{
+      aspect-ratio:1/1;background:#f1f5f9;border-radius:14px;display:grid;place-items:center;
+      color:var(--stone);font-weight:700;border:1px solid transparent;transition:.25s;cursor:pointer
     }
-
-    section h2::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 3px;
-      background-color: var(--color-acento-oro);
-      margin: 0.5rem auto 0;
+    .day:hover,.day.active{background:rgba(197,160,89,.12);border-color:rgba(197,160,89,.55);color:var(--blue)}
+    .map{
+      width:100%;height:320px;border:0;border-radius:18px;overflow:hidden
     }
-
-    section p.lead {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 2rem;
-      font-size: 1.1rem;
-      color: var(--color-gris-piedra);
+    .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:22px}
+    .contact-item{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}
+    .contact-item i{color:var(--gold);margin-top:4px}
+    footer{
+      background:var(--blue);color:rgba(255,255,255,.84);padding:26px 0
     }
-
-    /* El Despacho */
-    #el-despacho p {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto;
+    footer a{color:#fff;opacity:.9}
+    .footer-grid{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    .footer-grid small{max-width:66ch;line-height:1.7}
+    .overlay{
+      position:fixed;inset:0;background:rgba(3,10,18,.58);display:none;align-items:center;justify-content:center;
+      padding:20px;z-index:1000
     }
-
-    .valores {
-      margin-top: 1.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
+    .overlay.show{display:flex}
+    .modal{
+      width:min(720px,100%);background:#fff;border-radius:24px;box-shadow:0 30px 80px rgba(0,0,0,.28);
+      overflow:hidden;transform:translateY(18px);opacity:0;transition:.25s
     }
-
-    .valor {
-      background-color: var(--color-blanco-roto);
-      border-radius: 8px;
-      padding: 1rem 1.3rem;
-      flex: 1 1 250px;
-      text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      border-left: 4px solid var(--color-acento-oro);
+    .overlay.show .modal{transform:translateY(0);opacity:1}
+    .modal-head{
+      padding:18px 22px;background:linear-gradient(135deg, var(--blue), #123B66);
+      color:#fff;display:flex;justify-content:space-between;align-items:center;gap:16px
     }
-
-    .valor h4 {
-      color: var(--color-azul-profundo);
-      margin-bottom: 0.5rem;
+    .modal-head h3{color:#fff;font-size:1.35rem}
+    .close{
+      background:transparent;border:0;color:#fff;font-size:1.2rem;cursor:pointer
     }
-
-    /* SERVICIOS - tarjetas */
-    #servicios {
-      padding-bottom: 2rem;
+    .modal-body{padding:22px}
+    .popup-note{
+      position:fixed;right:18px;bottom:18px;z-index:1100;width:min(380px,calc(100vw - 36px));
+      background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 25px 70px rgba(0,0,0,.2);
+      display:none;overflow:hidden
     }
-
-    .servicios-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
+    .popup-note.show{display:block;animation:pop .35s ease}
+    @keyframes pop{from{transform:translateY(14px);opacity:0}to{transform:translateY(0);opacity:1}}
+    .popup-head{padding:14px 16px;background:var(--blue);color:#fff;display:flex;justify-content:space-between;align-items:center}
+    .popup-body{padding:16px}
+    .popup-body p{margin-bottom:14px}
+    .x-btn{
+      border:0;background:transparent;color:inherit;font-size:1.05rem;cursor:pointer
     }
-
-    .servicio-card {
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      border: 1px solid rgba(0,0,0,0.08);
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    .fade-up{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
+    .fade-up.in{opacity:1;transform:translateY(0)}
+    .subtle-line{height:1px;background:var(--line);margin:18px 0}
+    .pill{
+      display:inline-block;padding:8px 12px;border-radius:999px;background:rgba(197,160,89,.12);
+      color:var(--blue);font-weight:700;font-size:.84rem
     }
-
-    .servicio-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-      border-color: var(--color-acento-oro);
+    @media (max-width: 980px){
+      .hero-grid,.agenda-wrap,.contact-grid,.grid-3,.grid-2,.success-list{grid-template-columns:1fr}
+      .hero h1{max-width:none}
     }
-
-    .servicio-card .icono {
-      background-color: var(--color-azul-profundo);
-      color: white;
-      padding: 1.2rem 0;
-      text-align: center;
-      font-size: 1.8rem;
+    @media (max-width: 720px){
+      .nav{flex-direction:column;align-items:flex-start}
+      .nav-links{gap:14px}
+      .section{padding:72px 0}
+      .hero{padding:72px 0 58px}
+      .hero-card{padding:22px}
     }
+  </style>
+</head>
+<body>
 
-    .servicio-card .contenido {
-      padding: 1.2rem;
-    }
+  <header class="topbar">
+    <div class="container nav">
+      <a class="logo" href="#inicio" aria-label="Luna Castro, Herrera & Asociados">
+        <strong>Luna Castro, Herrera & Asociados</strong>
+        <span>Su tranquilidad es nuestra prioridad</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#despacho">El Despacho</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#casos">Casos</a>
+        <a href="#agenda">Agenda</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
 
-    .servicio-card h3 {
-      margin-bottom: 0.6rem;
-      font-size: 1.2rem;
-    }
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="fade-up">
+          <span class="eyebrow">Defensa estratégica con resultado</span>
+          <h1>Su tranquilidad es nuestra prioridad.</h1>
+          <p>Somos una firma dedicada a la defensa de sus intereses. Construimos un entorno de tranquilidad y certeza jurídica para asegurar su bienestar y potenciar el desarrollo óptimo de sus proyectos personales y de negocio.</p>
+          <div>
+            <a class="btn btn-gold" href="#agenda"><i class="fa-solid fa-calendar-check"></i> Agende su consulta</a>
+            <a class="btn btn-outline" href="#servicios" style="margin-left:10px"><i class="fa-solid fa-scale-balanced"></i> Ver servicios</a>
+          </div>
+          <div class="hero-badges">
+            <span class="badge">Tranquilidad</span>
+            <span class="badge">Certeza jurídica</span>
+            <span class="badge">Bienestar</span>
+            <span class="badge">Solución estratégica</span>
+          </div>
+        </div>
+        <aside class="hero-card fade-up">
+          <h3>Atención institucional con trato humano</h3>
+          <p>Nuestra práctica legal está diseñada en áreas de alta especialización para ofrecer soluciones integrales y estratégicas. Cada servicio es dirigido por abogados expertos y apoyado por un análisis multidisciplinario.</p>
+          <div class="subtle-line"></div>
+          <div class="hero-stat">
+            <div class="stat"><strong>6</strong><span>áreas clave</span></div>
+            <div class="stat"><strong>2</strong><span>abogados</span></div>
+            <div class="stat"><strong>15</strong><span>min demo</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-    .servicio-card p {
-      margin-bottom: 0;
-      font-size: 0.95rem;
-    }
+    <section class="section" id="despacho">
+      <div class="container">
+        <div class="fade-up">
+          <span class="eyebrow">El Despacho</span>
+          <h2 class="section-title">Filosofía firme, cercana y estratégica</h2>
+          <p class="section-lead">Acompañamos a cada cliente con un enfoque claro: proteger, prevenir y resolver. Creemos en una defensa bien diseñada, comunicación transparente y decisiones jurídicas que aporten calma en momentos complejos.</p>
+        </div>
+        <div class="grid-3" style="margin-top:28px">
+          <div class="card card-pad fade-up">
+            <div class="icon-box"><i class="fa-solid fa-seedling"></i></div>
+            <h3>Tranquilidad</h3>
+            <p class="muted">Convertimos la incertidumbre en un plan de acción sólido, estructurado y entendible desde el primer contacto.</p>
+          </div>
+          <div class="card card-pad fade-up">
+            <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Certeza jurídica</h3>
+            <p class="muted">Trabajamos con análisis técnico y visión preventiva para disminuir riesgos y fortalecer su posición legal.</p>
+          </div>
+          <div class="card card-pad fade-up">
+            <div class="icon-box"><i class="fa-solid fa-hand-holding-heart"></i></div>
+            <h3>Bienestar</h3>
+            <p class="muted">Defendemos sus intereses para preservar su patrimonio, relaciones y continuidad personal o empresarial.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    /* MODAL de servicio */
-    .modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1001;
-    }
+    <section class="section services" id="servicios">
+      <div class="container">
+        <div class="fade-up">
+          <span class="eyebrow">Servicios</span>
+          <h2 class="section-title">Áreas de práctica</h2>
+          <p class="section-lead">Toque cada tarjeta para ver una explicación ampliada del servicio. Los textos están pensados como base editable para futuras actualizaciones.</p>
+        </div>
 
-    .modal-container {
-      background: white;
-      width: 90%;
-      max-width: 600px;
-      border-radius: 12px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-      overflow: hidden;
-    }
+        <div class="grid-3" style="margin-top:28px">
+          <article class="card card-pad fade-up service-card" data-title="Derecho Familiar" data-detail="Asistencia en divorcio, custodia, pensión alimenticia, convenios y medidas de protección. Diseñamos estrategias para resguardar el interés familiar con sensibilidad y firmeza.">
+            <div class="icon-box"><i class="fa-solid fa-people-roof"></i></div>
+            <h3 class="service-title">Derecho Familiar</h3>
+            <p class="muted">Soluciones jurídicas para asuntos familiares con trato humano y visión protectora.</p>
+          </article>
 
-    .modal-header {
-      background: var(--color-azul-profundo);
-      color: white;
-      padding: 1rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+          <article class="card card-pad fade-up service-card" data-title="Defensa del Deudor y Protección Patrimonial" data-detail="Gestión de negociación, defensa frente a cobros, análisis de riesgos y estrategias para proteger bienes y activos frente a contingencias financieras.">
+            <div class="icon-box"><i class="fa-solid fa-coins"></i></div>
+            <h3 class="service-title">Defensa del Deudor y Protección Patrimonial</h3>
+            <p class="muted">Protegemos su patrimonio con tácticas preventivas y defensivas de alto impacto.</p>
+          </article>
 
-    .modal-header h3 {
-      margin: 0;
-      font-size: 1.4rem;
-      color: white;
-    }
+          <article class="card card-pad fade-up service-card" data-title="Derecho Mercantil" data-detail="Constitución de sociedades, contratos, conflictos entre socios, cobranzas y reestructuración de relaciones comerciales.">
+            <div class="icon-box"><i class="fa-solid fa-briefcase"></i></div>
+            <h3 class="service-title">Derecho Mercantil</h3>
+            <p class="muted">Acompañamiento legal para negocios, contratos y controversias empresariales.</p>
+          </article>
 
-    .modal-header .close-modal {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.4rem;
-      cursor: pointer;
-    }
+          <article class="card card-pad fade-up service-card" data-title="Derecho Laboral y Cumplimiento Corporativo" data-detail="Prevención y atención de conflictos laborales, auditorías internas, políticas de cumplimiento y defensa estratégica ante autoridades o tribunales.">
+            <div class="icon-box"><i class="fa-solid fa-user-shield"></i></div>
+            <h3 class="service-title">Derecho Laboral y Cumplimiento Corporativo</h3>
+            <p class="muted">Prevención y defensa para relaciones laborales sanas y estructuras corporativas seguras.</p>
+          </article>
 
-    .modal-body {
-      padding: 1.5rem;
-      max-height: 70vh;
-      overflow-y: auto;
-    }
+          <article class="card card-pad fade-up service-card" data-title="Derecho Internacional" data-detail="Asesoría para asuntos transfronterizos, contratos internacionales, movilidad jurídica y coordinación con otras jurisdicciones.">
+            <div class="icon-box"><i class="fa-solid fa-globe"></i></div>
+            <h3 class="service-title">Derecho Internacional</h3>
+            <p class="muted">Estrategia para operaciones y controversias con alcance internacional.</p>
+          </article>
 
-    .modal .btn {
-      margin-top: 1rem;
-    }
+          <article class="card card-pad fade-up service-card" data-title="Derecho Inmobiliario" data-detail="Compraventa, arrendamiento, regularización, revisión documental y solución de conflictos relacionados con bienes inmuebles.">
+            <div class="icon-box"><i class="fa-solid fa-building"></i></div>
+            <h3 class="service-title">Derecho Inmobiliario</h3>
+            <p class="muted">Seguridad jurídica en operaciones y controversias inmobiliarias.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    /* EQUIPO */
-    #equipo {
-      padding-top: 2rem;
-    }
+    <section class="section" id="equipo">
+      <div class="container">
+        <div class="fade-up">
+          <span class="eyebrow">Equipo</span>
+          <h2 class="section-title">Abogados responsables de su defensa</h2>
+          <p class="section-lead">Perfiles editables listos para sustituirse por la información real del despacho.</p>
+        </div>
 
-    .equipo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 1.5rem;
-    }
+        <div class="grid-2" style="margin-top:28px">
+          <article class="card fade-up">
+            <div class="team-photo">
+              <div>
+                <h3>Abogado 1 - Especialista en Derecho Familiar</h3>
+                <p>Correo: abogado1@lunacastro.com | Tel: +52 55 0000 0001</p>
+              </div>
+            </div>
+            <div class="card-pad">
+              <span class="pill">Perfil editable</span>
+              <p class="muted" style="margin-top:14px">Abogado 1 es un perfil de ejemplo con amplia experiencia en litigio familiar, negociación de convenios y construcción de soluciones sensibles para asuntos de alta carga emocional.</p>
+            </div>
+          </article>
 
-    .equipo-card {
-      background: var(--color-blanco-roto);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
+          <article class="card fade-up">
+            <div class="team-photo">
+              <div>
+                <h3>Abogado 2 - Especialista en Derecho Mercantil</h3>
+                <p>Correo: abogado2@lunacastro.com | Tel: +52 55 0000 0002</p>
+              </div>
+            </div>
+            <div class="card-pad">
+              <span class="pill">Perfil editable</span>
+              <p class="muted" style="margin-top:14px">Abogado 2 es un perfil de ejemplo con enfoque en contratos, conflictos societarios, protección patrimonial y acompañamiento estratégico para empresas.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    .equipo-card .perfil {
-      background-color: var(--color-azul-profundo);
-      color: white;
-      padding: 1.2rem 1rem;
-      text-align: center;
-    }
+    <section class="section" id="casos">
+      <div class="container">
+        <div class="fade-up">
+          <span class="eyebrow">Casos de Éxito</span>
+          <h2 class="section-title">Resultados que inspiran confianza</h2>
+          <p class="section-lead">Casos anónimos con formato editable para mostrar logros reales del despacho sin comprometer confidencialidad.</p>
+        </div>
 
-    .equipo-card .perfil h3 {
-      margin-bottom: 0.2rem;
-    }
+        <div class="success-list" style="margin-top:28px">
+          <article class="card card-pad success-item fade-up">
+            <div class="success-kicker">Protección patrimonial</div>
+            <h3>Se evitó el embargo del 100% de los bienes</h3>
+            <p class="muted">Se estructuró una defensa preventiva y una estrategia de negociación que protegió activos familiares y dio continuidad al proyecto personal del cliente.</p>
+          </article>
 
-    .equipo-card .perfil p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: #c5d9f0;
-    }
+          <article class="card card-pad success-item fade-up">
+            <div class="success-kicker">Derecho familiar</div>
+            <h3>Se logró un convenio favorable de custodia</h3>
+            <p class="muted">El asunto se resolvió con un acuerdo equilibrado que priorizó el bienestar de la familia y redujo tiempos de conflicto innecesarios.</p>
+          </article>
 
-    .equipo-card .datos {
-      padding: 1rem;
-    }
+          <article class="card card-pad success-item fade-up">
+            <div class="success-kicker">Mercantil</div>
+            <h3>Se recuperó cartera vencida con resolución estratégica</h3>
+            <p class="muted">Mediante una ruta jurídica clara se aceleró el cobro, se protegió la relación comercial y se obtuvo un resultado económicamente eficiente.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    .equipo-card .datos p {
-      margin-bottom: 0.4rem;
-    }
+    <section class="section" id="agenda">
+      <div class="container">
+        <div class="fade-up">
+          <span class="eyebrow">Agenda tu cita</span>
+          <h2 class="section-title">Reserve su consulta en minutos</h2>
+          <p class="section-lead">Seleccione una fecha y hora de forma demo y comparta sus datos. El botón muestra una alerta de prueba, sin backend.</p>
+        </div>
 
-    .equipo-card .datos a,
-    .equipo-card .datos a:hover {
-      color: var(--color-azul-profundo);
-      text-decoration: none;
-    }
+        <div class="agenda-wrap" style="margin-top:28px">
+          <div class="panel fade-up">
+            <h3 style="margin-bottom:14px">Calendario visual</h3>
+            <p class="muted">Haga clic en un día disponible para simular una agenda.</p>
+            <div class="subtle-line"></div>
+            <div class="mini-calendar" id="miniCalendar"></div>
+            <div class="field" style="margin-top:18px">
+              <label for="timeSlot">Hora</label>
+              <select id="timeSlot">
+                <option>09:00</option><option>10:00</option><option>11:00</option>
+                <option>12:00</option><option>13:00</option><option>16:00</option>
+                <option>17:00</option><option>18:00</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" id="demoReserve"><i class="fa-solid fa-calendar-plus"></i> Reservar demo</button>
+          </div>
 
-    /* CASOS DE ÉXITO */
-    #casos-exito {
-      padding-top: 2rem;
-    }
+          <form class="panel fade-up" id="contactForm">
+            <h3 style="margin-bottom:14px">Formulario breve</h3>
+            <div class="field">
+              <label for="name">Nombre</label>
+              <input id="name" type="text" placeholder="Su nombre" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="correo@ejemplo.com" required>
+            </div>
+            <div class="field">
+              <label for="phone">Teléfono</label>
+              <input id="phone" type="tel" placeholder="+52 55 0000 0000" required>
+            </div>
+            <div class="field">
+              <label for="subject">Asunto</label>
+              <input id="subject" type="text" placeholder="Breve descripción de su caso" required>
+            </div>
+            <button class="btn btn-gold" type="submit"><i class="fa-solid fa-paper-plane"></i> Enviar solicitud</button>
+          </form>
+        </div>
+      </div>
+    </section>
 
-    .casos-grid {
-      margin-top: 1.5rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="fade-up">
+          <span class="eyebrow">Contacto</span>
+          <h2 class="section-title">Estamos para atenderle</h2>
+          <p class="section-lead">Datos ficticios, creíbles y fáciles de sustituir por la información definitiva del despacho.</p>
+        </div>
 
-    .caso-card {
-      background: white;
-      border-radius: 10px;
-      padding: 1.3rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      border: 1px solid rgba(0,0,0,0.08);
-    }
+        <div class="contact-grid" style="margin-top:28px">
+          <div class="panel fade-up">
+            <h3 style="margin-bottom:18px">Datos de contacto</h3>
+            <div class="contact-item"><i class="fa-solid fa-location-dot"></i><div><strong>Dirección:</strong><br>Av. Paseo de la Reforma 123, Piso 12, Col. Juárez, Cuauhtémoc, CDMX.</div></div>
+            <div class="contact-item"><i class="fa-solid fa-phone"></i><div><strong>Teléfono:</strong><br>+52 55 1234 5678</div></div>
+            <div class="contact-item"><i class="fa-solid fa-envelope"></i><div><strong>Email:</strong><br>contacto@lunacastroasociados.com</div></div>
+            <div class="contact-item"><i class="fa-solid fa-clock"></i><div><strong>Horario:</strong><br>Lunes a viernes de 9:00 a 19:00</div></div>
+          </div>
 
-    .caso-card h4 {
-      margin-bottom: 0.5rem;
-      color: var(--color-azul-profundo);
-    }
+          <div class="panel fade-up">
+            <h3 style="margin-bottom:18px">Ubicación</h3>
+            <iframe
+              class="map"
+              title="Mapa Google Maps"
+              src="https://www.google.com/maps?q=Av.%20Paseo%20de%20la%20Reforma%20123,%20Ciudad%20de%20Mexico&output=embed"
+              loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    .caso-card p {
-      margin-bottom: 0;
-      font-size: 0.95rem;
-    }
+  <footer>
+    <div class="container footer-grid">
+      <small>© 2026 Luna Castro, Herrera & Asociados. Todos los derechos reservados. La información de esta web es de carácter informativo y no constituye asesoría legal personalizada.</small>
+      <div style="display:flex;gap:18px;flex-wrap:wrap">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Aviso de privacidad</a>
+      </div>
+    </div>
+  </footer>
 
-    /* AGENDA CITA */
-    #agenda-cita {
-      padding-top: 2rem;
-    }
+  <div class="overlay" id="serviceModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="serviceTitle">
+      <div class="modal-head">
+        <h3 id="serviceTitle">Servicio</h3>
+        <button class="close" id="closeService" aria-label="Cerrar modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="serviceDesc" class="muted"></p>
+        <div class="subtle-line"></div>
+        <p class="muted"><strong>Defensa estratégica con resultado.</strong> Este texto es editable y sirve como descripción ampliada del servicio seleccionado.</p>
+        <button class="btn btn-primary" onclick="location.hash='#agenda'"><i class="fa-solid fa-calendar-check"></i> Agende su consulta</button>
+      </div>
+    </div>
+  </div>
 
-    #agenda-cita .cita-wrapper {
-      max-width: 720px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
+  <div class="overlay" id="leadPopup">
+    <div class="modal" style="max-width:520px">
+      <div class="modal-head">
+        <h3>¿Necesita una primera orientación?</h3>
+        <button class="close" id="closeLead" aria-label="Cerrar pop-up"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p class="muted">Contáctenos hoy y dé el primer paso hacia una solución clara y ordenada.</p>
+        <button class="btn btn-gold" onclick="location.hash='#agenda'"><i class="fa-solid fa-calendar-check"></i> Ir a agenda</button>
+      </div>
+    </div>
+  </div>
 
-    @media (min-width: 768px) {
-      #agenda-cita .cita-wrapper {
-        grid-template-columns: 1fr 1fr;
+  <div class="overlay" id="exitPopup">
+    <div class="modal" style="max-width:520px">
+      <div class="modal-head">
+        <h3>Oferta de consulta gratuita</h3>
+        <button class="close" id="closeExit" aria-label="Cerrar pop-up"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p class="muted">Antes de irse, aproveche una consulta inicial de 15 minutos sin costo para orientar su caso.</p>
+        <button class="btn btn-primary" onclick="location.hash='#agenda'"><i class="fa-solid fa-clock"></i> Agendar 15 min</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const revealEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('in'); });
+    }, { threshold: 0.14 });
+    revealEls.forEach(el => observer.observe(el));
+
+    const serviceModal = document.getElementById('serviceModal');
+    const serviceTitle = document.getElementById('serviceTitle');
+    const serviceDesc = document.getElementById('serviceDesc');
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.addEventListener('click', () => {
+        serviceTitle.textContent = card.dataset.title;
+        serviceDesc.textContent = card.dataset.detail;
+        serviceModal.classList.add('show');
+      });
+    });
+    document.getElementById('closeService').onclick = () => serviceModal.classList.remove('show');
+    serviceModal.addEventListener('click', e => { if (e.target === serviceModal) serviceModal.classList.remove('show'); });
+
+    const leadPopup = document.getElementById('leadPopup');
+    const exitPopup = document.getElementById('exitPopup');
+
+    setTimeout(() => leadPopup.classList.add('show'), 3000);
+    document.getElementById('closeLead').onclick = () => leadPopup.classList.remove('show');
+    document.getElementById('closeExit').onclick = () => exitPopup.classList.remove('show');
+
+    let exitShown = false;
+    document.addEventListener('mouseleave', e => {
+      if (e.clientY <= 0 && !exitShown) {
+        exitPopup.classList.add('show');
+        exitShown = true;
       }
-    }
+    });
 
-    .calendario {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
+    const cal = document.getElementById('miniCalendar');
+    let selectedDay = null;
+    const days = Array.from({length: 21}, (_, i) => i + 1);
+    days.forEach(d => {
+      const div = document.createElement('div');
+      div.className = 'day';
+      div.textContent = d;
+      div.addEventListener('click', () => {
+        document.querySelectorAll('.day').forEach(x => x.classList.remove('active'));
+        div.classList.add('active');
+        selectedDay = d;
+      });
+      cal.appendChild(div);
+    });
 
-    .calendario label {
-      font-weight: 600;
-      color: var(--color-gris-piedra);
-    }
+    document.getElementById('demoReserve').addEventListener('click', () => {
+      const time = document.getElementById('timeSlot').value;
+      alert(selectedDay ? `Reserva demo: día ${selectedDay}, ${time}.` : `Reserva demo: seleccione un día y una hora.`);
+    });
 
-    .calendario input {
-      padding: 0.8rem;
-      border-radius: 6px;
-      border: 1px solid #cbd5e0;
-      font-size: 1rem;
-    }
-
-    .calendario input:focus {
-      outline: none;
-      border-color: var(--color-acento-oro);
-      box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
-    }
-
-    .formulario {
-      background-color: var(--color-blanco-roto);
-      border-radius: 10px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    .formulario label {
-      display: block;
-      margin-bottom: 0.4rem;
-      font-weight: 600;
-      color: var(--color-gris-piedra);
-    }
-
-    .formulario input[type="text"],
-    .formulario input[type="email"],
-    .formulario input[type="tel"],
-    .formulario textarea {
-      width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border-radius: 6px;
-      border: 1px solid #cbd5e0;
-      font-size: 1rem;
-    }
-
-    .formulario textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    .formulario input:focus,
-    .formulario textarea:focus {
-      outline: none;
-      border-color: var(--color-acento-oro);
-      box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
-    }
-
-    /* CONTACTO */
-    #contacto {
-      padding-top: 2rem;
-    }
-
-    #contacto .contacto-grid {
-      margin-top: 1.5rem;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
-    @media (min-width: 768px) {
-      #contacto .contacto-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .datos-contacto {
-      background-color: var(--color-blanco-roto);
-      border-radius: 10px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
-
-    .datos-contacto h4 {
-      margin-bottom: 0.8rem;
-    }
-
-    .datos-contacto ul {
-      list-style
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Formulario de demo enviado. En un sitio real aquí se integraría el backend.');
+      e.target.reset();
+      document.querySelectorAll('.day').forEach(x => x.classList.remove('active'));
+      selectedDay = null;
+    });
+  </script>
+</body>
+</html>
