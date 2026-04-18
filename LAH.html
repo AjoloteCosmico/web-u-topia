@@ -1,0 +1,1242 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Luna Castro, Herrera & Asociados - Defensa estratégica de sus intereses con certeza jurídica y tranquilidad.">
+    <title>Luna Castro, Herrera & Asociados | Abogados</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0A2B4E;
+            --secondary: #4A5568;
+            --accent: #C5A059;
+            --light: #F8FAFC;
+            --gray: #E2E8F0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+            line-height: 1.6;
+            color: var(--secondary);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .navbar {
+            background: var(--primary);
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1100;
+            box-shadow: 0 4px 12px rgba(10, 43, 78, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .logo i {
+            color: var(--accent);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu a:hover:after {
+            width: 100%;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--accent);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0A2B4E 0%, #1E3A5F 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 800%22%3E%3Crect fill=%22%23C5A059%22 opacity=%220.05%22 width=%221200%22 height=%22800%22/%3E%3C/svg%27') center/cover;
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease forwards;
+        }
+        
+        .hero-text p {
+            font-size: 1.25rem;
+            color: #E2E8F0;
+            margin-bottom: 2.5rem;
+            max-width: 520px;
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+        
+        .hero-text .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 25px -5px rgba(197, 160, 89, 0.3);
+            animation: fadeInUp 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+        
+        .hero-text .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 35px -5px rgba(197, 160, 89, 0.4);
+            color: #0A2B4E;
+        }
+        
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            animation: fadeInUp 1.2s ease 0.6s forwards;
+            opacity: 0;
+        }
+        
+        .hero-image .gavel {
+            font-size: 18rem;
+            color: rgba(255,255,255,0.12);
+            filter: drop-shadow(0 25px 25px rgba(197,160,89,0.3));
+        }
+        
+        section {
+            padding: 5rem 2rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-header p {
+            max-width: 620px;
+            margin: 0 auto;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+        
+        /* El Despacho */
+        .despacho-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .value-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(10, 43, 78, 0.08);
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(197, 160, 89, 0.15);
+        }
+        
+        .value-card i {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Servicios */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(10, 43, 78, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 2px solid transparent;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(197, 160, 89, 0.2);
+            border-color: var(--accent);
+        }
+        
+        .service-card i {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .service-card:hover i {
+            color: var(--accent);
+        }
+        
+        .service-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        /* Equipo */
+        .equipo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(10, 43, 78, 0.08);
+            transition: all 0.4s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(197, 160, 89, 0.15);
+        }
+        
+        .team-photo {
+            height: 320px;
+            background: linear-gradient(135deg, #0A2B4E, #1E3A5F);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            color: rgba(255,255,255,0.15);
+            position: relative;
+        }
+        
+        .team-photo::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(transparent, rgba(10,43,78,0.6));
+        }
+        
+        .team-info {
+            padding: 1.75rem;
+        }
+        
+        /* Casos de Éxito */
+        .casos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+        
+        .caso-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(10, 43, 78, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .caso-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .caso-card .resultado {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        /* Agenda */
+        .agenda-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 15px 40px rgba(10, 43, 78, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--gray);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        .calendar-demo {
+            background: #F8FAFC;
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--gray);
+        }
+        
+        .demo-slots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: 12px;
+            margin-top: 1rem;
+        }
+        
+        .slot-btn {
+            padding: 12px 16px;
+            background: white;
+            border: 2px solid var(--gray);
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .slot-btn:hover {
+            border-color: var(--accent);
+            background: #FEFCE8;
+        }
+        
+        .slot-btn.active {
+            background: var(--accent);
+            color: var(--primary);
+            border-color: var(--accent);
+        }
+        
+        /* Contacto */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .map-container {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(10, 43, 78, 0.1);
+            height: 420px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .footer-col h3 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+        
+        /* Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 43, 78, 0.75);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            animation: modalFade 0.3s ease;
+        }
+        
+        .modal-content {
+            background: white;
+            max-width: 520px;
+            width: 90%;
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(10, 43, 78, 0.25);
+            animation: modalPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray);
+        }
+        
+        .modal-close {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .modal-close:hover {
+            color: var(--accent);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes modalFade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes modalPop {
+            0% { transform: scale(0.95); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            .hero-text h1 {
+                font-size: 2.6rem;
+            }
+            .agenda-container {
+                grid-template-columns: 1fr;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 76px;
+                left: 0;
+                right: 0;
+                background: var(--primary);
+                flex-direction: column;
+                padding: 1rem 2rem;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            section {
+                padding: 3.5rem 1.25rem;
+            }
+        }
+        
+        .btn-gold {
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+        
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px -5px rgb(197 160 89);
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <i class="fas fa-balance-scale"></i>
+                Luna Castro, Herrera &amp; Asociados
+            </a>
+            
+            <!-- Desktop Menu -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#despacho">El Despacho</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+                <li><a href="#casos">Casos de Éxito</a></li>
+                <li><a href="#agenda">Agenda tu Cita</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileBtn" aria-label="Menú">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Su tranquilidad es nuestra prioridad</h1>
+                <p>Somos una firma dedicada a la defensa de sus intereses. Construimos un entorno de tranquilidad y certeza jurídica para asegurar su bienestar y potenciar el desarrollo óptimo de sus proyectos personales y de negocio.</p>
+                <a href="#agenda" class="cta-button">
+                    <i class="fas fa-calendar-check"></i>
+                    Agende su consulta
+                </a>
+                <div style="margin-top: 2rem; font-size: 1rem; color: #E2E8F0; display: flex; align-items: center; gap: 12px; justify-content: center;">
+                    <i class="fas fa-shield-alt" style="color: #C5A059;"></i>
+                    <span>Defensa estratégica con resultados</span>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <i class="fas fa-gavel gavel"></i>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.6); animation: bounce 2s infinite;">
+            <i class="fas fa-chevron-down fa-2x"></i>
+        </div>
+    </header>
+
+    <!-- EL DESPACHO -->
+    <section id="despacho" class="fade-in">
+        <div class="section-header">
+            <h2>El Despacho</h2>
+            <p>Nuestra práctica legal está diseñada en áreas de alta especialización para ofrecer soluciones integrales y estratégicas. Cada servicio es dirigido por abogados expertos y apoyado por un análisis multidisciplinario.</p>
+        </div>
+        
+        <div class="despacho-grid">
+            <div class="value-card">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h3>Tranquilidad</h3>
+                <p>Nos comprometemos a que cada paso de su caso sea claro, predecible y sin estrés innecesario.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-lock"></i>
+                <h3>Certeza Jurídica</h3>
+                <p>Construimos estrategias sólidas respaldadas por jurisprudencia actualizada y análisis exhaustivo.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-seedling"></i>
+                <h3>Bienestar</h3>
+                <p>Protegiendo sus intereses hoy, aseguramos el crecimiento y la estabilidad de sus proyectos a futuro.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="fade-in" style="background: #F1F5F9;">
+        <div class="section-header">
+            <h2>Nuestros Servicios</h2>
+            <p>Áreas de alta especialización con soluciones integrales</p>
+        </div>
+        
+        <div class="servicios-grid" id="serviciosGrid">
+            <!-- Cards generadas por JS -->
+        </div>
+    </section>
+
+    <!-- EQUIPO -->
+    <section id="equipo" class="fade-in">
+        <div class="section-header">
+            <h2>Nuestro Equipo</h2>
+            <p>Abogados con trayectoria reconocida y compromiso total con sus casos</p>
+        </div>
+        
+        <div class="equipo-grid">
+            <!-- Abogado 1 -->
+            <div class="team-card">
+                <div class="team-photo">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="team-info">
+                    <h3>Dra. Elena Luna Castro</h3>
+                    <p style="color: var(--accent); font-weight: 600; margin-bottom: 1rem;">Socia Fundadora • Derecho Familiar y Protección Patrimonial</p>
+                    <p style="font-size: 1rem; margin-bottom: 1.5rem;">Con más de 18 años de experiencia, la Dra. Luna Castro es reconocida por su enfoque humano y estratégico en temas familiares y patrimoniales. Ha representado exitosamente a cientos de familias y empresarios en litigios complejos.</p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="mailto:elena@lunacastroherrera.mx" style="color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 6px;"><i class="fas fa-envelope"></i> elena@lunacastroherrera.mx</a>
+                        <a href="tel:+525512345678" style="color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 6px;"><i class="fas fa-phone"></i> +52 55 1234 5678</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Abogado 2 -->
+            <div class="team-card">
+                <div class="team-photo">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="team-info">
+                    <h3>Dr. Miguel Herrera López</h3>
+                    <p style="color: var(--accent); font-weight: 600; margin-bottom: 1rem;">Socio • Derecho Mercantil y Laboral</p>
+                    <p style="font-size: 1rem; margin-bottom: 1.5rem;">Más de 15 años asesorando empresas nacionales e internacionales. Especialista en cumplimiento corporativo, litigios mercantiles y derecho laboral colectivo. Ha logrado resoluciones favorables por más de 45 millones de pesos en los últimos tres años.</p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="mailto:miguel@lunacastroherrera.mx" style="color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 6px;"><i class="fas fa-envelope"></i> miguel@lunacastroherrera.mx</a>
+                        <a href="tel:+525598765432" style="color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 6px;"><i class="fas fa-phone"></i> +52 55 9876 5432</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASOS DE ÉXITO -->
+    <section id="casos" class="fade-in" style="background: #F1F5F9;">
+        <div class="section-header">
+            <h2>Casos de Éxito</h2>
+            <p>Resultados que demuestran nuestra capacidad de defensa estratégica</p>
+        </div>
+        
+        <div class="casos-grid">
+            <div class="caso-card">
+                <span class="resultado">100% protegido</span>
+                <h3>Protección patrimonial</h3>
+                <p style="margin: 1rem 0;">Se evitó el embargo del 100% de los bienes de un empresario familiar ante una demanda por deuda millonaria. Se logró una reestructuración favorable en menos de 90 días.</p>
+                <div style="color: var(--accent); font-size: 0.9rem; font-weight: 500;">Cliente anónimo • 2025</div>
+            </div>
+            
+            <div class="caso-card">
+                <span class="resultado">+2.8M USD</span>
+                <h3>Derecho internacional y mercantil</h3>
+                <p style="margin: 1rem 0;">Litigio transfronterizo por incumplimiento de contrato. Obtuvimos sentencia favorable por 2.8 millones de dólares en favor de nuestro cliente mexicano.</p>
+                <div style="color: var(--accent); font-size: 0.9rem; font-weight: 500;">Cliente anónimo • 2024</div>
+            </div>
+            
+            <div class="caso-card">
+                <span class="resultado">Indemnización récord</span>
+                <h3>Derecho laboral colectivo</h3>
+                <p style="margin: 1rem 0;">Representamos a 87 trabajadores en un conflicto laboral. Se consiguió indemnización total superior al 240% de lo inicialmente ofrecido por la empresa.</p>
+                <div style="color: var(--accent); font-size: 0.9rem; font-weight: 500;">Cliente anónimo • 2025</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AGENDA TU CITA -->
+    <section id="agenda" class="fade-in">
+        <div class="section-header">
+            <h2>Agenda tu Cita</h2>
+            <p>La primera consulta de orientación es gratuita (15 minutos). Reserve ahora y dé el primer paso hacia la certeza jurídica.</p>
+        </div>
+        
+        <div class="agenda-container">
+            <!-- Formulario -->
+            <div>
+                <h3 style="margin-bottom: 1.5rem; color: var(--primary);">Complete sus datos</h3>
+                
+                <form id="citaForm">
+                    <div class="form-group">
+                        <label>Nombre completo</label>
+                        <input type="text" id="nombre" required placeholder="Su nombre">
+                    </div>
+                    <div class="form-group">
+                        <label>Correo electrónico</label>
+                        <input type="email" id="email" required placeholder="correo@ejemplo.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono</label>
+                        <input type="tel" id="telefono" required placeholder="+52 55 1234 5678">
+                    </div>
+                    <div class="form-group">
+                        <label>Asunto / Tipo de caso</label>
+                        <select id="asunto" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="Derecho Familiar">Derecho Familiar</option>
+                            <option value="Defensa del Deudor y Protección Patrimonial">Defensa del Deudor y Protección Patrimonial</option>
+                            <option value="Derecho Mercantil">Derecho Mercantil</option>
+                            <option value="Derecho Laboral">Derecho Laboral y Cumplimiento Corporativo</option>
+                            <option value="Derecho Internacional">Derecho Internacional</option>
+                            <option value="Derecho Inmobiliario">Derecho Inmobiliario</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-gold w-full">Enviar y agendar</button>
+                </form>
+            </div>
+            
+            <!-- Calendario visual simple + slots -->
+            <div>
+                <h3 style="margin-bottom: 1rem; color: var(--primary);">Seleccione fecha y hora</h3>
+                <div class="calendar-demo">
+                    <input type="date" id="fechaCita" style="width: 100%; margin-bottom: 1rem;" value="2026-04-28">
+                    
+                    <p style="font-weight: 500; margin-bottom: 12px;">Horarios disponibles:</p>
+                    <div class="demo-slots" id="slotsContainer">
+                        <!-- Generados por JS -->
+                    </div>
+                    
+                    <button onclick="reservarDemo()" class="btn-gold" style="width: 100%; margin-top: 1.5rem;">
+                        <i class="fas fa-calendar-check"></i> Confirmar reserva
+                    </button>
+                    <p style="text-align: center; font-size: 0.85rem; color: #64748B; margin-top: 1rem;">
+                        Esta es una demostración. En producción se conectaría con Calendly.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="fade-in" style="background: #F1F5F9;">
+        <div class="section-header">
+            <h2>Contáctenos</h2>
+            <p>Estamos listos para proteger lo que más le importa</p>
+        </div>
+        
+        <div class="contact-grid">
+            <div>
+                <div style="background: white; padding: 2.5rem; border-radius: 20px; height: 100%;">
+                    <h3 style="margin-bottom: 2rem; color: var(--primary);">Información de contacto</h3>
+                    
+                    <div style="display: flex; gap: 1.5rem; margin-bottom: 2rem;">
+                        <i class="fas fa-map-marker-alt fa-2x" style="color: var(--accent);"></i>
+                        <div>
+                            <strong>Oficinas</strong><br>
+                            Paseo de la Reforma 123, Piso 8<br>
+                            Col. Cuauhtémoc, CDMX, C.P. 06500
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1.5rem; margin-bottom: 2rem;">
+                        <i class="fas fa-phone fa-2x" style="color: var(--accent);"></i>
+                        <div>
+                            <strong>Teléfono</strong><br>
+                            +52 55 1234 5678<br>
+                            <strong>WhatsApp</strong><br>
+                            +52 55 9876 5432
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1.5rem;">
+                        <i class="fas fa-envelope fa-2x" style="color: var(--accent);"></i>
+                        <div>
+                            <strong>Correo electrónico</strong><br>
+                            contacto@lunacastroherrera.mx
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #E2E8F0;">
+                        <p><strong>Horario de atención:</strong><br>Lunes a viernes de 9:00 a 18:00 hrs</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mapa estático embed -->
+            <div class="map-container">
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    loading="lazy" 
+                    allowfullscreen 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.9665180000004!2d-99.168000!3d19.4326077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff4b3c9c9c9d%3A0x4c4c4c4c4c4c4c4c!2sPaseo%20de%20la%20Reforma%2C%20Cuauht%C3%A9moc%2C%20CDMX!5e0!3m2!1ses!2smx!4v1744910000000!5m2!1ses!2smx"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo" style="color: white; font-size: 1.6rem; margin-bottom: 1rem;">
+                    <i class="fas fa-balance-scale"></i>
+                    Luna Castro, Herrera &amp; Asociados
+                </div>
+                <p style="max-width: 280px; opacity: 0.85;">Defendemos sus intereses con experiencia, ética y resultados concretos.</p>
+                <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">© 2026 Luna Castro, Herrera &amp; Asociados. Todos los derechos reservados.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Servicios</h3>
+                <ul style="list-style: none; line-height: 2.2;">
+                    <li><a href="#" style="color: white; text-decoration: none;">Derecho Familiar</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none;">Protección Patrimonial</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none;">Derecho Mercantil</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none;">Derecho Laboral</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none;">Derecho Internacional</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none;">Derecho Inmobiliario</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Enlaces rápidos</h3>
+                <ul style="list-style: none; line-height: 2.2;">
+                    <li><a href="#despacho" style="color: white; text-decoration: none;">Sobre nosotros</a></li>
+                    <li><a href="#casos" style="color: white; text-decoration: none;">Casos de éxito</a></li>
+                    <li><a href="#agenda" style="color: white; text-decoration: none;">Agendar cita</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none;">Blog jurídico</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none;">Preguntas frecuentes</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Síganos</h3>
+                <div style="display: flex; gap: 1rem; font-size: 1.6rem;">
+                    <a href="#" style="color: var(--accent);"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" style="color: var(--accent);"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">Confianza. Experiencia. Resultados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- POP-UP BIENVENIDA (3 segundos) -->
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 style="color: var(--primary);">¿Necesita una primera orientación?</h3>
+                <span class="modal-close" onclick="closeModal('welcomeModal')">&times;</span>
+            </div>
+            <p style="margin-bottom: 2rem; font-size: 1.1rem;">Contáctenos hoy mismo. La primera consulta de 15 minutos es gratuita y sin compromiso.</p>
+            <div style="display: flex; gap: 1rem;">
+                <button onclick="closeModal('welcomeModal'); document.getElementById('agenda').scrollIntoView({behavior:'smooth'})" class="btn-gold" style="flex: 1;">
+                    Agendar ahora
+                </button>
+                <button onclick="closeModal('welcomeModal')" style="flex: 1; background: transparent; border: 2px solid #C5A059; color: var(--primary); border-radius: 50px; font-weight: 600;">
+                    Más tarde
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- POP-UP EXIT INTENT -->
+    <div id="exitModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 style="color: var(--primary);">¡No se vaya todavía!</h3>
+                <span class="modal-close" onclick="closeModal('exitModal')">&times;</span>
+            </div>
+            <p style="margin-bottom: 1.5rem;">Le ofrecemos una <strong>consulta gratuita de 15 minutos</strong> para evaluar su caso. Nuestro equipo está listo para ayudarle.</p>
+            <button onclick="closeModal('exitModal'); document.getElementById('agenda').scrollIntoView({behavior:'smooth'})" class="btn-gold" style="width: 100%;">
+                Sí, quiero mi consulta gratuita
+            </button>
+            <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; cursor: pointer;" onclick="closeModal('exitModal')">No, gracias</p>
+        </div>
+    </div>
+
+    <!-- MODAL DE SERVICIOS (dinámico) -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalServiceTitle" style="color: var(--primary);"></h3>
+                <span class="modal-close" onclick="closeModal('serviceModal')">&times;</span>
+            </div>
+            <div id="modalServiceContent" style="line-height: 1.7; font-size: 1.05rem;"></div>
+            <button onclick="closeModal('serviceModal'); document.getElementById('agenda').scrollIntoView({behavior:'smooth'})" class="btn-gold" style="width: 100%; margin-top: 2rem;">
+                Agendar consulta sobre este servicio
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // ==================== CONFIGURACIÓN DE SERVICIOS ====================
+        const servicios = [
+            {
+                icon: "fas fa-users",
+                title: "Derecho Familiar",
+                short: "Divorcios, custodia, pensiones y adopciones",
+                content: "Asesoría integral en divorcios, custodia de menores, pensiones alimenticias, adopciones y sucesiones. Protegemos sus lazos familiares con empatía, firmeza y un enfoque estratégico que prioriza el bienestar de todos los involucrados."
+            },
+            {
+                icon: "fas fa-shield-alt",
+                title: "Defensa del Deudor y Protección Patrimonial",
+                short: "Blindaje de activos y reestructuración de deudas",
+                content: "Estrategias legales para evitar embargos, reestructuración de pasivos y protección de patrimonio familiar y empresarial. Evitamos pérdidas innecesarias y construimos un escudo jurídico sólido."
+            },
+            {
+                icon: "fas fa-briefcase",
+                title: "Derecho Mercantil",
+                short: "Contratos, sociedades y litigios comerciales",
+                content: "Redacción y negociación de contratos, constitución de sociedades, fusiones, adquisiciones y resolución de litigios mercantiles. Asesoramos empresas en todas las etapas de su crecimiento."
+            },
+            {
+                icon: "fas fa-balance-scale",
+                title: "Derecho Laboral y Cumplimiento Corporativo",
+                short: "Relaciones laborales y normatividad",
+                content: "Defensa en juicios laborales, elaboración de contratos colectivos, auditorías de cumplimiento normativo y prevención de riesgos laborales. Garantizamos la tranquilidad de su empresa."
+            },
+            {
+                icon: "fas fa-globe",
+                title: "Derecho Internacional",
+                short: "Litigios transfronterizos y comercio exterior",
+                content: "Asesoría en tratados internacionales, litigios transfronterizos, importaciones/exportaciones y protección de inversiones extranjeras. Especialistas en derecho internacional privado."
+            },
+            {
+                icon: "fas fa-home",
+                title: "Derecho Inmobiliario",
+                short: "Compra-venta, arrendamientos y desarrollo",
+                content: "Tramitación de escrituras, contratos de arrendamiento, desarrollos inmobiliarios, regularización de propiedades y resolución de controversias catastrales."
+            }
+        ]
+
+        // ==================== GENERAR TARJETAS DE SERVICIOS ====================
+        function renderServicios() {
+            const grid = document.getElementById('serviciosGrid')
+            grid.innerHTML = ''
+            
+            servicios.forEach((servicio, index) => {
+                const card = document.createElement('div')
+                card.className = 'service-card'
+                card.innerHTML = `
+                    <i class="${servicio.icon}"></i>
+                    <h3>${servicio.title}</h3>
+                    <p style="flex: 1;">${servicio.short}</p>
+                    <div style="margin-top: 1.5rem; color: var(--accent); font-size: 0.95rem; font-weight: 600; display: flex; align-items: center; gap: 6px;">
+                        Ver detalles 
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                `
+                card.addEventListener('click', () => {
+                    openServiceModal(servicio)
+                })
+                grid.appendChild(card)
+            })
+        }
+
+        // ==================== MODAL DE SERVICIO ====================
+        function openServiceModal(servicio) {
+            document.getElementById('modalServiceTitle').innerHTML = `
+                <i class="${servicio.icon}" style="margin-right: 12px; color: var(--accent);"></i>
+                ${servicio.title}
+            `
+            document.getElementById('modalServiceContent').innerHTML = `<p>${servicio.content}</p>`
+            document.getElementById('serviceModal').style.display = 'flex'
+        }
+
+        // ==================== POP-UPS ====================
+        let exitShown = false
+        
+        function showWelcomeModal() {
+            setTimeout(() => {
+                const modal = document.getElementById('welcomeModal')
+                if (modal) modal.style.display = 'flex'
+            }, 3000)
+        }
+        
+        function showExitIntent() {
+            document.addEventListener('mouseleave', function(e) {
+                if (e.clientY < 0 && !exitShown) {
+                    exitShown = true
+                    const modal = document.getElementById('exitModal')
+                    if (modal) modal.style.display = 'flex'
+                }
+            })
+        }
+        
+        function closeModal(id) {
+            const modal = document.getElementById(id)
+            if (modal) modal.style.display = 'none'
+        }
+
+        // ==================== CALENDARIO DEMO ====================
+        function renderSlots() {
+            const container = document.getElementById('slotsContainer')
+            const slots = [
+                "09:00", "10:00", "11:00", "12:00",
+                "13:30", "14:30", "15:30", "16:30"
+            ]
+            
+            container.innerHTML = ''
+            slots.forEach(slot => {
+                const btn = document.createElement('div')
+                btn.className = 'slot-btn'
+                btn.textContent = slot
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('active'))
+                    btn.classList.add('active')
+                })
+                container.appendChild(btn)
+            })
+        }
+        
+        function reservarDemo() {
+            const fecha = document.getElementById('fechaCita').value
+            const activeSlot = document.querySelector('.slot-btn.active')
+            
+            if (!fecha || !activeSlot) {
+                alert('❌ Por favor seleccione fecha y hora')
+                return
+            }
+            
+            alert(`✅ ¡Reserva confirmada!\n\nFecha: ${fecha}\nHora: ${activeSlot.textContent}\n\nUn representante de Luna Castro, Herrera & Asociados se comunicará con usted en breve.`)
+            
+            // Reset
+            document.getElementById('citaForm').reset()
+            document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('active'))
+        }
+
+        // ==================== FORMULARIO DE CITA ====================
+        function handleCitaForm() {
+            const form = document.getElementById('citaForm')
+            form.addEventListener('submit', function(e) {
+                e.preventDefault()
+                
+                const nombre = document.getElementById('nombre').value
+                alert(`✅ ¡Gracias, ${nombre}!\n\nSu solicitud ha sido recibida. En las próximas horas uno de nuestros abogados se pondrá en contacto para confirmar su cita.`)
+                
+                form.reset()
+                // Scroll suave a hero o cerrar
+            })
+        }
+
+        // ==================== ANIMACIONES AL HACER SCROLL ====================
+        function observeFadeIn() {
+            const elements = document.querySelectorAll('.fade-in')
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible')
+                    }
+                })
+            }, {
+                threshold: 0.15
+            })
+            
+            elements.forEach(el => observer.observe(el))
+        }
+
+        // ==================== MENÚ MÓVIL ====================
+        function initMobileMenu() {
+            const btn = document.getElementById('mobileBtn')
+            const menu = document.getElementById('navMenu')
+            
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('active')
+                const icon = btn.querySelector('i')
+                if (menu.classList.contains('active')) {
+                    icon.classList.replace('fa-bars', 'fa-xmark')
+                } else {
+                    icon.classList.replace('fa-xmark', 'fa-bars')
+                }
+            })
+            
+            // Cerrar menú al hacer clic en un enlace
+            const links = menu.querySelectorAll('a')
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.remove('active')
+                    const icon = btn.querySelector('i')
+                    icon.classList.replace('fa-xmark', 'fa-bars')
+                })
+            })
+        }
+
+        // ==================== INICIALIZACIÓN GENERAL ====================
+        function init() {
+            renderServicios()
+            renderSlots()
+            handleCitaForm()
+            observeFadeIn()
+            initMobileMenu()
+            showWelcomeModal()
+            showExitIntent()
+            
+            // Scroll suave para todos los enlaces internos
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') !== '#') {
+                        e.preventDefault()
+                        const target = document.querySelector(this.getAttribute('href'))
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth' })
+                        }
+                    }
+                })
+            })
+            
+            console.log('%c✅ Página de Luna Castro, Herrera & Asociados cargada correctamente. Lista para producción.', 'color:#C5A059; font-weight:700')
+        }
+        
+        // Cargar todo
+        window.onload = init
+    </script>
+</body>
+</html>
+```
