@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna Castro, Herrera & Asociados | Defensa Estratégica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        :root {
+            --navy: #0A2B4E;
+            --stone: #4A5568;
+            --white: #F8FAFC;
+            --gold: #C5A059;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--white); color: #333; line-height: 1.6; }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--navy); }
+
+        /* Animaciones */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 1s ease-out forwards; }
+
+        /* Componentes */
+        .btn { padding: 12px 30px; border: none; cursor: pointer; transition: 0.3s; font-weight: 600; text-decoration: none; display: inline-block; }
+        .btn-gold { background-color: var(--gold); color: white; }
+        .btn-gold:hover { background-color: #a88448; }
+
+        /* Header */
+        header { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: white; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow); }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--navy); }
+        nav a { margin-left: 20px; text-decoration: none; color: var(--stone); font-size: 0.9rem; }
+
+        /* Hero */
+        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(10, 43, 78, 0.8), rgba(10, 43, 78, 0.8)), url('https://images.unsplash.com/photo-1589829545856-d13d55e0901e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover; color: white; padding: 0 10%; }
+        .hero h1 { color: white; font-size: 3rem; margin-bottom: 20px; }
+
+        /* Secciones Generales */
+        section { padding: 80px 5%; max-width: 1200px; margin: auto; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+
+        /* Servicios */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { padding: 40px; background: white; border-top: 4px solid var(--gold); box-shadow: var(--shadow); transition: 0.3s; cursor: pointer; }
+        .service-card:hover { transform: translateY(-10px); }
+        .service-card i { font-size: 2rem; color: var(--gold); margin-bottom: 20px; }
+
+        /* Equipo */
+        .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .team-card { background: #eee; padding: 30px; border-radius: 4px; text-align: center; }
+
+        /* Contacto y Formulario */
+        .contact-section { background: var(--navy); color: white; }
+        .contact-section h2 { color: white; }
+        .form-group { margin-bottom: 15px; }
+        input, select, textarea { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px; }
+
+        /* Modales */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center; }
+        .modal-content { background: white; padding: 40px; max-width: 500px; position: relative; border-radius: 8px; }
+        .close-btn { position: absolute; top: 10px; right: 20px; cursor: pointer; font-size: 1.5rem; }
+
+        /* Footer */
+        footer { padding: 40px; text-align: center; background: #1a1a1a; color: white; font-size: 0.8rem; }
+
+        @media (max-width: 768px) { .team-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Luna Castro, Herrera & Asociados</div>
+        <nav>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#agenda" class="btn btn-gold" style="padding: 8px 15px;">Agende su consulta</a>
+        </nav>
+    </header>
+
+    <section class="hero fade-in">
+        <h1>Su tranquilidad es nuestra prioridad.</h1>
+        <p>Somos una firma dedicada a la defensa de sus intereses. Construimos un entorno de tranquilidad y certeza jurídica para asegurar su bienestar y potenciar el desarrollo óptimo de sus proyectos personales y de negocio.</p>
+        <br>
+        <a href="#agenda" class="btn btn-gold">Agende su consulta</a>
+    </section>
+
+    <section id="nosotros">
+        <h2 class="section-title">El Despacho</h2>
+        <p style="text-align: center; max-width: 800px; margin: auto;">Nuestra práctica legal está diseñada en áreas de alta especialización para ofrecer soluciones integrales y estratégicas. Cada servicio es dirigido por abogados expertos y apoyado por un análisis multidisciplinario.</p>
+    </section>
+
+    <section id="servicios">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card" onclick="openModal('Derecho Familiar', 'Asesoría experta en divorcios, custodia y sucesiones.')">
+                <i class="fas fa-users"></i>
+                <h3>Derecho Familiar</h3>
+                <p>Protección y mediación en el núcleo familiar.</p>
+            </div>
+            <div class="service-card" onclick="openModal('Defensa del Deudor', 'Protección contra embargos y estrategias de renegociación.')">
+                <i class="fas fa-shield-halved"></i>
+                <h3>Defensa del Deudor</h3>
+                <p>Protección Patrimonial y defensa contra acciones de cobro.</p>
+            </div>
+            <div class="service-card" onclick="openModal('Derecho Mercantil', 'Consultoría en contratos y litigios comerciales.')"><i class="fas fa-briefcase"></i><h3>Derecho Mercantil</h3></div>
+            <div class="service-card" onclick="openModal('Derecho Laboral', 'Cumplimiento corporativo y defensa de derechos.')"><i class="fas fa-gavel"></i><h3>Derecho Laboral</h3></div>
+            <div class="service-card" onclick="openModal('Derecho Internacional', 'Gestión de asuntos legales transfronterizos.')"><i class="fas fa-globe"></i><h3>Derecho Internacional</h3></div>
+            <div class="service-card" onclick="openModal('Derecho Inmobiliario', 'Regularización y seguridad en bienes raíces.')"><i class="fas fa-building"></i><h3>Derecho Inmobiliario</h3></div>
+        </div>
+    </section>
+
+    <section id="equipo">
+        <h2 class="section-title">Nuestro Equipo</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <h3>Lic. María Luna Castro</h3>
+                <p><strong>Especialidad:</strong> Derecho Familiar y Mercantil</p>
+                <p>Más de 15 años de experiencia liderando litigios complejos.</p>
+                <p>Email: contacto@lunacastro.com</p>
+            </div>
+            <div class="team-card">
+                <h3>Lic. Juan Herrera</h3>
+                <p><strong>Especialidad:</strong> Cumplimiento Corporativo</p>
+                <p>Estratega legal enfocado en la prevención y protección patrimonial.</p>
+                <p>Tel: +52 55 1234 5678</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="agenda" class="contact-section">
+        <h2 class="section-title">Agenda tu Cita</h2>
+        <form id="bookingForm" style="max-width: 600px; margin: auto; background: white; padding: 30px; color: #333; border-radius: 8px;">
+            <div class="form-group"><input type="text" placeholder="Nombre completo" required></div>
+            <div class="form-group"><input type="email" placeholder="Correo electrónico" required></div>
+            <div class="form-group"><input type="datetime-local" required></div>
+            <div class="form-group"><textarea placeholder="Asunto" rows="4"></textarea></div>
+            <button type="submit" class="btn btn-gold" style="width: 100%;">Solicitar Reserva</button>
+        </form>
+    </section>
+
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">Título</h2>
+            <p id="modalBody">Descripción</p>
+        </div>
+    </div>
+
+    <div id="welcomeModal" class="modal" style="display: flex;">
+        <div class="modal-content">
+            <span class="close-btn" onclick="document.getElementById('welcomeModal').style.display='none'">&times;</span>
+            <h2>¿Necesita orientación?</h2>
+            <p>Estamos aquí para ayudarle. Agende una breve llamada con nuestros especialistas hoy mismo.</p>
+            <a href="#agenda" class="btn btn-gold" onclick="document.getElementById('welcomeModal').style.display='none'">Agendar ahora</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Luna Castro, Herrera & Asociados. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Modal de Servicios
+        function openModal(title, body) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalBody').innerText = body;
+            document.getElementById('serviceModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('serviceModal').style.display = 'none';
+        }
+
+        // Popup al cargar (3 seg)
+        window.onload = () => {
+            setTimeout(() => {
+                const welcome = document.getElementById('welcomeModal');
+                if(!sessionStorage.getItem('welcomeShown')) {
+                    welcome.style.display = 'flex';
+                    sessionStorage.setItem('welcomeShown', 'true');
+                }
+            }, 3000);
+        };
+
+        // Popup de Exit Intent
+        document.addEventListener('mouseleave', (e) => {
+            if (e.clientY < 0 && !sessionStorage.getItem('exitShown')) {
+                alert('¡Espere! No se vaya sin su consulta gratuita de 15 minutos. Contáctenos hoy.');
+                sessionStorage.setItem('exitShown', 'true');
+            }
+        });
+
+        // Formulario de reserva
+        document.getElementById('bookingForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('¡Gracias por su interés! Hemos recibido su solicitud. Un asesor se pondrá en contacto pronto (Demo técnica).');
+        });
+    </script>
+</body>
+</html>
