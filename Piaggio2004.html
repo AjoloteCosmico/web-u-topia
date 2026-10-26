@@ -46,17 +46,25 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(126,200,227,0.08) 0%, transparent 60%);
+            inset: -8%;
+            background-image: linear-gradient(135deg, rgba(26,26,26,0.72) 0%, rgba(44,44,44,0.58) 45%, rgba(31,42,48,0.78) 100%), url('Piaggio%20IA.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: saturate(0.6) brightness(0.52) contrast(1.08);
+            transform: scale(1.08);
             animation: pulse 12s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .hero > * {
+            position: relative;
+            z-index: 1;
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.6; }
-            50% { transform: scale(1.1); opacity: 1; }
+            0%, 100% { transform: scale(1.08); opacity: 0.75; }
+            50% { transform: scale(1.15); opacity: 1; }
         }
 
         .badge {
@@ -87,9 +95,10 @@
 
         .hero .subtitle {
             font-size: clamp(1.1rem, 3vw, 1.5rem);
-            color: #b0b0b0;
+            color: #d9d9d9;
             margin-bottom: 2rem;
             font-weight: 300;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.25);
         }
 
         .price-tag {
@@ -250,6 +259,27 @@
             font-size: 3rem;
             opacity: 0.5;
             margin-bottom: 0.5rem;
+        }
+
+        .photo-profile {
+            background-image: linear-gradient(rgba(12,12,12,0.2), rgba(12,12,12,0.38)), url('perfil.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-style: solid;
+            border-color: rgba(126,200,227,0.4);
+        }
+
+        .photo-profile .big-icon,
+        .photo-profile > div:not(.label) {
+            display: none;
+        }
+
+        .photo-profile .label {
+            margin-top: 0;
+            background: rgba(0,0,0,0.45);
+            border: 1px solid rgba(126,200,227,0.5);
+            backdrop-filter: blur(2px);
         }
 
         /* Info grids */
@@ -442,9 +472,7 @@
                 <div>Foto de atrás</div>
                 <div class="label">Vista trasera</div>
             </div>
-            <div class="photo-placeholder">
-                <div class="big-icon">📷</div>
-                <div>Foto lateral</div>
+            <div class="photo-placeholder photo-profile">
                 <div class="label">Perfil completo</div>
             </div>
             <div class="photo-placeholder">
@@ -525,7 +553,7 @@
 
         <div class="details-list">
             <h4>🎨 Detalles estéticos</h4>
-            <p><strong>Facia delantera:</strong> Se despegó cuando me pasó un carro al lado. Está fijada, no se cae, pero ya no se agarra de donde debería porque se rompió esa parte. Se ve un poco raro.</p>
+            <p><strong>Facia delantera:</strong> Se despegó cuando me pasó un carro al lado. Está fijada, no se cae, pero ya no se agarra de donde debería porque se rompió esa parte. Se ve un poco rara, pero sigue funcionando.</p>
             <p><strong>Parrilla delantera:</strong> Se la robaron (es la única pieza que sale así, jalando).</p>
             <p><strong>Calavera trasera izquierda:</strong> Está rota. Todas las luces funcionan perfectamente, solo está rota la carcasa (la pegué con colaloca).</p>
             <p><strong>Pintura:</strong> Tiene rayoncitos en varias partes.</p>
@@ -535,9 +563,9 @@
 
             <h4>🔧 Modificaciones importantes</h4>
             <p><strong>Botón de encendido:</strong> Como se pegaba la marcha, casi nunca enciende con la llave. Le pusieron un botón que hace que arranque el motor.</p>
-            <p><strong>Bulbo de temperatura:</strong> Ningún eléctrico logró entender cómo estaba conectado. Le pusieron un bulbo de Jetta al ladito del radiador y lo conectaron al ventilador. El original sigue ahí (no sabemos exactamente dónde). <strong>Resultado:</strong> ya nunca se calienta, el ventilador entra cuando debe y el refrigerante hace el resto. Todo bien en ese aspecto, pero está modificado.</p>
+            <p><strong>Bulbo de temperatura:</strong> Ningún eléctrico logró entender cómo estaba conectado. Le pusieron un bulbo de Jetta al ladito del radiador y lo conectaron al ventilador. El sistema funciona y no me ha dejado tirado.</p>
             <p><strong>Seguros centrales:</strong> Se deshabilitaron para arreglar un falso contacto. Se pueden volver a habilitar, pero la batería se descarga más rápido.</p>
-            <p><strong>Alternador:</strong> Funciona bien, pero da 13.7 V (las especificaciones dicen 14 V). No me ha causado mayor problema. Algunos eléctricos dicen que es normal dependiendo del multímetro.</p>
+            <p><strong>Alternador:</strong> Funciona bien, pero da 13.7 V (las especificaciones dicen 14 V). No me ha causado mayor problema. Algunos eléctricos dicen que es normal dependiendo del motor y el estado de la batería.</p>
         </div>
 
         <div class="important-box" style="margin-top: 2.5rem;">
